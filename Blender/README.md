@@ -22,7 +22,7 @@ Everything—from the geometry and kinematics to the procedural materials and st
 
 1. Open a new or empty project in Blender.
 2. Navigate to the **Scripting** workspace at the top of the screen.
-3. Click **New** (or Open) in the Text Editor and paste the contents of `zanvar_simulation.py`.
+3. Click **New** (or Open) in the Text Editor and paste the contents of `Robotic_Arm.py`.
 4. Run the script by clicking the ▶️ play icon in the text editor or pressing `Alt + P`.
 5. Hover your mouse over the 3D viewport and press `SPACEBAR` to play the animation.
 
