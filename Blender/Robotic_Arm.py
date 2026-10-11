@@ -1,36 +1,3 @@
-"""
-ZANVAR - Automated mold hardness inspection SIMULATION (Blender)
-================================================================
-Run:  Scripting workspace > Text > Open > this file > Run Script (Alt+P)
-      then press SPACE in the 3D viewport (or the Play button) to watch the cycle.
-Works on Blender 3.x / 4.x / 5.x.  Re-running the script rebuilds everything cleanly.
-
-WHAT IT DOES
-  The arm starts at HOME, then inspects SubMold_1 -> SubMold_5.
-  Every sub-mold gets 3 hardness points:
-      V   vertical   - sensor comes from the TOP and touches the cavity (pit) floor
-      H1  horizontal - sensor inside the cavity, pointing -X, touches the LEFT wall
-      H2  horizontal - sensor inside the cavity, pointing +X, touches the RIGHT wall
-  Every contact is placed by inverse kinematics, so the needle tip lands exactly on
-  the point.  The final approach to each point is a straight line ALONG the needle
-  axis (perpendicular to the surface), then a dwell, then the same line back out.
-
-WHY THE ARM NOW SITS ON A RAIL AND IS SCALED
-  Your original arm (reach 6.5) cannot reach the mold (centre 6.07 away, far
-  cavities ~8 away) and its joints only swing in one plane.  So:
-    * the whole arm is scaled by ARM_SCALE (links, joints, details)
-    * it stands on a carriage that slides on a rail beside the mold (axis 7)
-    * the carriage lines the arm plane up with each sub-mold, so every probe
-      is a clean radial move in the arm plane
-
-SENSOR
-  Needle + core were ~1.8 long; now 0.60 (x ARM_SCALE) so the whole probe fits
-  inside the cavity for the side points.
-
-ALL READINGS ARE SIMULATED.  Dimensions are illustrative placeholders.
-Verification: after building, the script drives the timeline to every contact
-frame and prints the real tip-to-point error measured on the Blender objects.
-"""
 import bpy
 import math
 import random
