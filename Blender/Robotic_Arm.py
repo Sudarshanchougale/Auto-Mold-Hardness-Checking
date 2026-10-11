@@ -1164,7 +1164,7 @@ def zanvar_frame_handler(scn, *args):
     for (f0, f1, label, sm, pt) in PLAN.events:
         if f0 <= f <= f1:
             status = label if sm is None else "SM%d  %s  -  %s" % (sm + 1, PT_LABEL.get(pt, "TRAVEL"), label)
-    lines = ["ZANVAR MOLD HARDNESS INSPECTION  (SIMULATION)", status]
+    lines = ["AUTO MOLD HARDNESS INSPECTION  (SIMULATION)", status]
     all_done, any_fail = True, False
     for i in range(5):
         done = all(f >= PLAN.read_frame[(i, p)] for p in PTS)
